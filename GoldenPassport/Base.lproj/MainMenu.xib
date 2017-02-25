@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="GoldenPassport" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="A7z-EV-ZJb" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="GoldenPassport" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="275-6h-gP7" id="sHv-UU-ZIX"/>
+            </connections>
+        </customObject>
+        <menu id="275-6h-gP7">
+            <items>
+                <menuItem title="认证管理" id="tVu-JO-mUd">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="添加..." id="EIF-pz-Vhv">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="删除" id="EUi-mw-GQs">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="lgI-PP-tuj"/>
+                <menuItem title="关于" id="lkD-dK-pdV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutClickedWithSender:" target="A7z-EV-ZJb" id="SoV-Ca-TnY"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="退出" id="GAm-17-nOa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClickedWithSender:" target="A7z-EV-ZJb" id="hFF-d1-o56"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="138.5" y="165.5"/>
+        </menu>
+    </objects>
+</document>

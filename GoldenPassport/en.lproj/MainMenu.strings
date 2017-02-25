@@ -1,0 +1,8 @@
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "GAm-17-nOa"; */
+
+"add_key_menu_item.title" = "Quit";
+"remove_key_menu_item.title" = "Quit";
+
+"about_menu_item.title" = "Quit";
+"quit_menu_item.title" = "Quit";

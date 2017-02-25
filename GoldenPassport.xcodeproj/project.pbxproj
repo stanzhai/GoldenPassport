@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F61B6B8A1E6135B600C3E272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6B891E6135B600C3E272 /* AppDelegate.swift */; };
+		F61B6B8C1E6135B600C3E272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61B6B8B1E6135B600C3E272 /* Assets.xcassets */; };
+		F61B6B8F1E6135B600C3E272 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61B6B8D1E6135B600C3E272 /* MainMenu.xib */; };
+		F61B6B9B1E613DE300C3E272 /* I18n.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61B6B9D1E613DE300C3E272 /* I18n.strings */; };
+		F61B6BA01E614C7A00C3E272 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F61B6B861E6135B600C3E272 /* GoldenPassport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenPassport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61B6B891E6135B600C3E272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F61B6B8B1E6135B600C3E272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F61B6B8E1E6135B600C3E272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F61B6B901E6135B600C3E272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F61B6B971E613BE000C3E272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		F61B6B981E613D0200C3E272 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		F61B6B9C1E613DE300C3E272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/I18n.strings; sourceTree = "<group>"; };
+		F61B6B9E1E613DE500C3E272 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/I18n.strings"; sourceTree = "<group>"; };
+		F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F61B6B831E6135B600C3E272 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F61B6B7D1E6135B600C3E272 = {
+			isa = PBXGroup;
+			children = (
+				F61B6B881E6135B600C3E272 /* GoldenPassport */,
+				F61B6B871E6135B600C3E272 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F61B6B871E6135B600C3E272 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F61B6B861E6135B600C3E272 /* GoldenPassport.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F61B6B881E6135B600C3E272 /* GoldenPassport */ = {
+			isa = PBXGroup;
+			children = (
+				F61B6B891E6135B600C3E272 /* AppDelegate.swift */,
+				F61B6B8B1E6135B600C3E272 /* Assets.xcassets */,
+				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
+				F61B6B901E6135B600C3E272 /* Info.plist */,
+				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
+				F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */,
+			);
+			path = GoldenPassport;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F61B6B851E6135B600C3E272 /* GoldenPassport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F61B6B931E6135B600C3E272 /* Build configuration list for PBXNativeTarget "GoldenPassport" */;
+			buildPhases = (
+				F61B6B821E6135B600C3E272 /* Sources */,
+				F61B6B831E6135B600C3E272 /* Frameworks */,
+				F61B6B841E6135B600C3E272 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoldenPassport;
+			productName = GoldenPassport;
+			productReference = F61B6B861E6135B600C3E272 /* GoldenPassport.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F61B6B7E1E6135B600C3E272 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = StanZhai;
+				TargetAttributes = {
+					F61B6B851E6135B600C3E272 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F61B6B811E6135B600C3E272 /* Build configuration list for PBXProject "GoldenPassport" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = F61B6B7D1E6135B600C3E272;
+			productRefGroup = F61B6B871E6135B600C3E272 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F61B6B851E6135B600C3E272 /* GoldenPassport */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F61B6B841E6135B600C3E272 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F61B6B9B1E613DE300C3E272 /* I18n.strings in Resources */,
+				F61B6B8C1E6135B600C3E272 /* Assets.xcassets in Resources */,
+				F61B6B8F1E6135B600C3E272 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F61B6B821E6135B600C3E272 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F61B6BA01E614C7A00C3E272 /* StatusMenuController.swift in Sources */,
+				F61B6B8A1E6135B600C3E272 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F61B6B8D1E6135B600C3E272 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61B6B8E1E6135B600C3E272 /* Base */,
+				F61B6B971E613BE000C3E272 /* en */,
+				F61B6B981E613D0200C3E272 /* zh-Hans */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		F61B6B9D1E613DE300C3E272 /* I18n.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61B6B9C1E613DE300C3E272 /* en */,
+				F61B6B9E1E613DE500C3E272 /* zh-Hans */,
+			);
+			name = I18n.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F61B6B911E6135B600C3E272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F61B6B921E6135B600C3E272 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		F61B6B941E6135B600C3E272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GoldenPassport/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = site.stanzhai.GoldenPassport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F61B6B951E6135B600C3E272 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GoldenPassport/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = site.stanzhai.GoldenPassport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F61B6B811E6135B600C3E272 /* Build configuration list for PBXProject "GoldenPassport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F61B6B911E6135B600C3E272 /* Debug */,
+				F61B6B921E6135B600C3E272 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F61B6B931E6135B600C3E272 /* Build configuration list for PBXNativeTarget "GoldenPassport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F61B6B941E6135B600C3E272 /* Debug */,
+				F61B6B951E6135B600C3E272 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F61B6B7E1E6135B600C3E272 /* Project object */;
+}
