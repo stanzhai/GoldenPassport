@@ -10,6 +10,7 @@ import Cocoa
 
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
+    var addVerifyKeyController: AddVerifyKeyController?
     
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
@@ -18,6 +19,18 @@ class StatusMenuController: NSObject {
         icon?.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
+    }
+    
+    @IBAction func addVerifyClicked(_ sender: NSMenuItem) {
+        if self.addVerifyKeyController == nil {
+            let controller = AddVerifyKeyController(windowNibName: "AddVerifyKeyWindow")
+            addVerifyKeyController = controller
+        }
+        
+        
+        addVerifyKeyController?.showWindow(self)
+        addVerifyKeyController?.window?.makeKeyAndOrderFront(self)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     @IBAction func aboutClicked(sender: NSMenuItem) {

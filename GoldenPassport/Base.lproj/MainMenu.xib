@@ -26,6 +26,9 @@
                 </menuItem>
                 <menuItem title="添加..." id="EIF-pz-Vhv">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="addVerifyClicked:" target="A7z-EV-ZJb" id="IHB-KI-tF5"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="删除" id="EUi-mw-GQs">
                     <modifierMask key="keyEquivalentModifierMask"/>
