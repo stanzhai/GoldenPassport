@@ -8,12 +8,20 @@
 
 import Cocoa
 
-class AddVerifyKeyController: NSWindowController {
+class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var okBtn: NSButton!
     @IBOutlet weak var cancelBtn: NSButton!
     
+    override var windowNibName : String! {
+        return "AddVerifyKeyWindow"
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+        self.window?.center()
+        self.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
 
     @IBAction func okBtnClicked(_ sender: NSButton) {
@@ -21,7 +29,6 @@ class AddVerifyKeyController: NSWindowController {
     }
     
     @IBAction func cancelBtnClicked(_ sender: NSButton) {
-        NSLog("test")
         self.window?.close()
     }
 }

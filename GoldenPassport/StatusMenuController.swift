@@ -10,27 +10,28 @@ import Cocoa
 
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
-    var addVerifyKeyController: AddVerifyKeyController?
+    var addVerifyKeyWindow: AddVerifyKeyWindow!
     
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
     override func awakeFromNib() {
+        addVerifyKeyWindow = AddVerifyKeyWindow()
+        
         let icon = NSImage(named: "statusIcon")
         icon?.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
+        statusMenu.addItem(NSMenuItem.separator())
+        statusMenu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(self.openMenu), keyEquivalent: "q"))
+        statusItem.action = #selector(self.openMenu)
+    }
+    
+    func openMenu(sender: AnyObject?) {
+        NSLog("open menu")
     }
     
     @IBAction func addVerifyClicked(_ sender: NSMenuItem) {
-        if self.addVerifyKeyController == nil {
-            let controller = AddVerifyKeyController(windowNibName: "AddVerifyKeyWindow")
-            addVerifyKeyController = controller
-        }
-        
-        
-        addVerifyKeyController?.showWindow(self)
-        addVerifyKeyController?.window?.makeKeyAndOrderFront(self)
-        NSApp.activate(ignoringOtherApps: true)
+        addVerifyKeyWindow.showWindow(nil)
     }
     
     @IBAction func aboutClicked(sender: NSMenuItem) {

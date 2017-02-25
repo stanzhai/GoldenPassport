@@ -13,7 +13,7 @@
 		F61B6B9B1E613DE300C3E272 /* I18n.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61B6B9D1E613DE300C3E272 /* I18n.strings */; };
 		F61B6BA01E614C7A00C3E272 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */; };
 		F61B6BA21E61787A00C3E272 /* AddVerifyKeyWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */; };
-		F61B6BA51E617EDE00C3E272 /* AddVerifyKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6BA41E617EDE00C3E272 /* AddVerifyKeyController.swift */; };
+		F61B6BA51E617EDE00C3E272 /* AddVerifyKeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6BA41E617EDE00C3E272 /* AddVerifyKeyWindow.swift */; };
 		F61B6C101E61B76D00C3E272 /* GTMAbstractDOListener.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B6BAA1E61B76D00C3E272 /* GTMAbstractDOListener.m */; };
 		F61B6C111E61B76D00C3E272 /* GTMCalculatedRange.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B6BAC1E61B76D00C3E272 /* GTMCalculatedRange.m */; };
 		F61B6C121E61B76D00C3E272 /* GTMDebugThreadValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B6BAF1E61B76D00C3E272 /* GTMDebugThreadValidation.m */; };
@@ -83,7 +83,7 @@
 		F61B6B9E1E613DE500C3E272 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/I18n.strings"; sourceTree = "<group>"; };
 		F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddVerifyKeyWindow.xib; sourceTree = "<group>"; };
-		F61B6BA41E617EDE00C3E272 /* AddVerifyKeyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerifyKeyController.swift; sourceTree = "<group>"; };
+		F61B6BA41E617EDE00C3E272 /* AddVerifyKeyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVerifyKeyWindow.swift; sourceTree = "<group>"; };
 		F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoldenPassport-Bridging-Header.h"; sourceTree = "<group>"; };
 		F61B6BA91E61B76D00C3E272 /* GTMAbstractDOListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMAbstractDOListener.h; path = "google-tools-for-mac/GTMAbstractDOListener.h"; sourceTree = "<group>"; };
 		F61B6BAA1E61B76D00C3E272 /* GTMAbstractDOListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMAbstractDOListener.m; path = "google-tools-for-mac/GTMAbstractDOListener.m"; sourceTree = "<group>"; };
@@ -233,15 +233,16 @@
 		F61B6B881E6135B600C3E272 /* GoldenPassport */ = {
 			isa = PBXGroup;
 			children = (
+				F61B6B8B1E6135B600C3E272 /* Assets.xcassets */,
 				F61B6C411E61B77A00C3E272 /* OTPAuth */,
 				F61B6BA71E61B6AF00C3E272 /* Foundation */,
 				F61B6BA31E617E9200C3E272 /* Controllers */,
 				F61B6B891E6135B600C3E272 /* AppDelegate.swift */,
-				F61B6B8B1E6135B600C3E272 /* Assets.xcassets */,
 				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
 				F61B6B901E6135B600C3E272 /* Info.plist */,
 				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
 				F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */,
+				F61B6BA41E617EDE00C3E272 /* AddVerifyKeyWindow.swift */,
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
 			);
 			path = GoldenPassport;
@@ -250,7 +251,6 @@
 		F61B6BA31E617E9200C3E272 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F61B6BA41E617EDE00C3E272 /* AddVerifyKeyController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -466,7 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61B6C281E61B76D00C3E272 /* GTMNSNumber+64Bit.m in Sources */,
-				F61B6BA51E617EDE00C3E272 /* AddVerifyKeyController.swift in Sources */,
+				F61B6BA51E617EDE00C3E272 /* AddVerifyKeyWindow.swift in Sources */,
 				F61B6C4C1E61B78E00C3E272 /* OTPGenerator.m in Sources */,
 				F61B6BA01E614C7A00C3E272 /* StatusMenuController.swift in Sources */,
 				F61B6C1C1E61B76D00C3E272 /* GTMNSAppleEvent+HandlerTest.applescript in Sources */,
