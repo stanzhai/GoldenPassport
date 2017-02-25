@@ -236,7 +236,6 @@
 				F61B6B8B1E6135B600C3E272 /* Assets.xcassets */,
 				F61B6C411E61B77A00C3E272 /* OTPAuth */,
 				F61B6BA71E61B6AF00C3E272 /* Foundation */,
-				F61B6BA31E617E9200C3E272 /* Controllers */,
 				F61B6B891E6135B600C3E272 /* AppDelegate.swift */,
 				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
 				F61B6B901E6135B600C3E272 /* Info.plist */,
@@ -246,13 +245,6 @@
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
 			);
 			path = GoldenPassport;
-			sourceTree = "<group>";
-		};
-		F61B6BA31E617E9200C3E272 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controllers;
 			sourceTree = "<group>";
 		};
 		F61B6BA71E61B6AF00C3E272 /* Foundation */ = {
