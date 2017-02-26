@@ -28,6 +28,24 @@ final class DataManager {
         saveData()
     }
     
+    func allAuthCode() -> [String : String] {
+        var result: [String : String] = [:]
+        for d in data {
+            let url = d.value
+            let otpData = OTPAuthURLParser(url)
+            
+            let data = OTPAuthURL.base32Decode(otpData.secret)
+            let gen = TOTPGenerator(secret: data,
+                                    algorithm: TOTPGenerator.defaultAlgorithm(),
+                                    digits: TOTPGenerator.defaultDigits(),
+                                    period: TOTPGenerator.defaultPeriod())
+            let code = gen?.generateOTP(for: Date())
+            
+            result[d.key] = code
+        }
+        return result
+    }
+    
     private func saveData() {
         let fileUrl = URL(fileURLWithPath: dataFilePath)
         try? NSKeyedArchiver.archivedData(withRootObject: data).write(to: fileUrl)
