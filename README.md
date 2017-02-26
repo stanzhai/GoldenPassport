@@ -18,3 +18,4 @@ A native swift implementation of Google Authenticator for Mac
 - [Swift Resources](https://developer.apple.com/swift/resources/)
 - [macOS Development Tutorials](https://www.raywenderlich.com/category/macos)
 - [google-authenticator](https://github.com/google/google-authenticator)
+- [WeatherBar](http://footle.org/WeatherBar/)
