@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AddVerifyKeyWindow" customModule="GoldenPassport" customModuleProvider="target">
             <connections>
+                <outlet property="otpTextField" destination="cdw-Ps-qXC" id="cbF-JZ-3mM"/>
+                <outlet property="tagTextField" destination="R7m-vm-E4W" id="v5w-hk-lGM"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="kio-Gb-zbv"/>
             </connections>
         </customObject>
@@ -25,7 +27,7 @@
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsA-bx-vCP">
                         <rect key="frame" x="321" y="13" width="67" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="确认" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QAX-48-MKl">
+                        <buttonCell key="cell" type="push" title="添加" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QAX-48-MKl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name=".PingFangSC-Regular"/>
                         </buttonCell>
@@ -45,18 +47,9 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdw-Ps-qXC">
-                        <rect key="frame" x="20" y="149" width="440" height="50"/>
+                        <rect key="frame" x="20" y="135" width="440" height="64"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="OTPAuth URL:" drawsBackground="YES" id="KET-hm-MMu">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7m-vm-E4W">
-                        <rect key="frame" x="65" y="114" width="395" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="可选：为此验证码添加特定标识，便于识别" drawsBackground="YES" id="ETR-af-hzH">
+                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="OTPAuth URL:" drawsBackground="YES" id="KET-hm-MMu">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -69,6 +62,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="13" name=".PingFangSC-Regular"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="selectPicClicked:" target="-2" id="FZo-Yp-VRe"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-yp-DMn">
                         <rect key="frame" x="20" y="212" width="58" height="17"/>
@@ -79,8 +75,17 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7m-vm-E4W">
+                        <rect key="frame" x="65" y="103" width="395" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="可选：为此验证码添加特定标识，便于识别" drawsBackground="YES" id="ETR-af-hzH">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Akl-uF-b8X">
-                        <rect key="frame" x="18" y="116" width="44" height="17"/>
+                        <rect key="frame" x="18" y="105" width="44" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="标识：" id="sc4-HC-qit">
                             <font key="font" size="13" name=".PingFangSC-Regular"/>

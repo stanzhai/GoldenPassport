@@ -69,6 +69,7 @@
 		F61B6C4D1E61B78E00C3E272 /* TOTPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B6C491E61B78E00C3E272 /* TOTPGenerator.m */; };
 		F61B6C561E61BE0100C3E272 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B6C551E61BE0100C3E272 /* libz.tbd */; };
 		F61B6C571E61BE1C00C3E272 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B6C4F1E61B86900C3E272 /* libsqlite3.tbd */; };
+		F6D14B791E6273460078FD22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D14B781E6273460078FD22 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,6 +199,7 @@
 		F61B6C491E61B78E00C3E272 /* TOTPGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TOTPGenerator.m; path = OTPAuth/TOTPGenerator.m; sourceTree = "<group>"; };
 		F61B6C4F1E61B86900C3E272 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F61B6C551E61BE0100C3E272 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F6D14B781E6273460078FD22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,12 +239,14 @@
 				F61B6C411E61B77A00C3E272 /* OTPAuth */,
 				F61B6BA71E61B6AF00C3E272 /* Foundation */,
 				F61B6B891E6135B600C3E272 /* AppDelegate.swift */,
+				F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */,
 				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
 				F61B6B901E6135B600C3E272 /* Info.plist */,
 				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
 				F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */,
 				F61B6BA41E617EDE00C3E272 /* AddVerifyKeyWindow.swift */,
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
+				F6D14B781E6273460078FD22 /* DataManager.swift */,
 			);
 			path = GoldenPassport;
 			sourceTree = "<group>";
@@ -353,7 +357,6 @@
 				F61B6C0D1E61B76D00C3E272 /* GTMURLBuilder.m */,
 				F61B6C0E1E61B76D00C3E272 /* GTMValidatingContainers.h */,
 				F61B6C0F1E61B76D00C3E272 /* GTMValidatingContainers.m */,
-				F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				F61B6C131E61B76D00C3E272 /* GTMExceptionalInlines.m in Sources */,
 				F61B6C331E61B76E00C3E272 /* GTMPath.m in Sources */,
 				F61B6C3F1E61B76E00C3E272 /* GTMURLBuilder.m in Sources */,
+				F6D14B791E6273460078FD22 /* DataManager.swift in Sources */,
 				F61B6C1F1E61B76D00C3E272 /* GTMNSAppleScript+Handler.m in Sources */,
 				F61B6C311E61B76E00C3E272 /* GTMNSThread+Blocks.m in Sources */,
 				F61B6C3A1E61B76E00C3E272 /* GTMStringEncoding.m in Sources */,
