@@ -72,6 +72,7 @@
 		F630E1C51E62BA0F004FA7C1 /* OTPAuthURLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */; };
 		F630E1C81E62DC58004FA7C1 /* VerifyManagerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630E1C61E62DC58004FA7C1 /* VerifyManagerWindow.swift */; };
 		F630E1C91E62DC58004FA7C1 /* VerifyManagerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F630E1C71E62DC58004FA7C1 /* VerifyManagerWindow.xib */; };
+		F653584C1E632AB500DD2FAB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653584B1E632AB500DD2FAB /* Constant.swift */; };
 		F6D14B791E6273460078FD22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D14B781E6273460078FD22 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -205,6 +206,7 @@
 		F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPAuthURLParser.swift; sourceTree = "<group>"; };
 		F630E1C61E62DC58004FA7C1 /* VerifyManagerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyManagerWindow.swift; sourceTree = "<group>"; };
 		F630E1C71E62DC58004FA7C1 /* VerifyManagerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyManagerWindow.xib; sourceTree = "<group>"; };
+		F653584B1E632AB500DD2FAB /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F6D14B781E6273460078FD22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +258,7 @@
 				F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */,
 				F630E1C61E62DC58004FA7C1 /* VerifyManagerWindow.swift */,
 				F630E1C71E62DC58004FA7C1 /* VerifyManagerWindow.xib */,
+				F653584B1E632AB500DD2FAB /* Constant.swift */,
 			);
 			path = GoldenPassport;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				F61B6C2A1E61B76D00C3E272 /* GTMNSScanner+JSON.m in Sources */,
 				F61B6C2D1E61B76E00C3E272 /* GTMNSString+HTML.m in Sources */,
 				F61B6C141E61B76D00C3E272 /* GTMFileSystemKQueue.m in Sources */,
+				F653584C1E632AB500DD2FAB /* Constant.swift in Sources */,
 				F61B6C2C1E61B76E00C3E272 /* GTMNSString+FindFolder.m in Sources */,
 				F61B6C101E61B76D00C3E272 /* GTMAbstractDOListener.m in Sources */,
 				F61B6C4B1E61B78E00C3E272 /* OTPAuthURL.m in Sources */,

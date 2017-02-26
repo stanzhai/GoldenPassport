@@ -16,6 +16,7 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="A7z-EV-ZJb" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="GoldenPassport" customModuleProvider="target">
             <connections>
+                <outlet property="deleteMenuItem" destination="EUi-mw-GQs" id="2TY-Hu-a2x"/>
                 <outlet property="statusMenu" destination="275-6h-gP7" id="a0s-Jx-7x1"/>
             </connections>
         </customObject>
@@ -24,13 +25,13 @@
                 <menuItem title="认证管理" id="tVu-JO-mUd">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="添加..." keyEquivalent="a" id="EIF-pz-Vhv">
+                <menuItem title="添加..." id="EIF-pz-Vhv">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="addVerifyClicked:" target="A7z-EV-ZJb" id="IHB-KI-tF5"/>
                     </connections>
                 </menuItem>
-                <menuItem title="删除" keyEquivalent="d" id="EUi-mw-GQs">
+                <menuItem title="删除" id="EUi-mw-GQs">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="deleteClicked:" target="A7z-EV-ZJb" id="mAO-Z4-BO1"/>
@@ -43,7 +44,7 @@
                         <action selector="aboutClickedWithSender:" target="A7z-EV-ZJb" id="SoV-Ca-TnY"/>
                     </connections>
                 </menuItem>
-                <menuItem title="退出" keyEquivalent="q" id="GAm-17-nOa">
+                <menuItem title="退出" id="GAm-17-nOa">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="quitClickedWithSender:" target="A7z-EV-ZJb" id="hFF-d1-o56"/>

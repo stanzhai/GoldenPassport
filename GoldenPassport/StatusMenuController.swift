@@ -12,6 +12,7 @@ class StatusMenuController: NSObject {
     var addVerifyKeyWindow: AddVerifyKeyWindow!
     
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var deleteMenuItem: NSMenuItem!
     var statusItem: NSStatusItem!
     var timerMenuItem: NSMenuItem!
     var authCodeMenuItems: [NSMenuItem] = []
@@ -32,16 +33,17 @@ class StatusMenuController: NSObject {
     }
     
     private func loadIcons() {
+        let iconSize = NSMakeSize(14, 14)
         statusIcon = NSImage(named: "statusIcon")
-        statusIcon.size = NSMakeSize(16, 16)
+        statusIcon.size = iconSize
         statusIcon.isTemplate = true
         
         copyIcon = NSImage(named: "copyIcon")
-        copyIcon.size = NSMakeSize(14, 14)
+        copyIcon.size = iconSize
         copyIcon.isTemplate = true
         
         removeIcon = NSImage(named: "removeIcon")
-        removeIcon.size = NSMakeSize(14, 14)
+        removeIcon.size = iconSize
         removeIcon.isTemplate = true
     }
     
@@ -54,7 +56,7 @@ class StatusMenuController: NSObject {
     
     private func initStatusMenuItems() {
         statusMenu.insertItem(NSMenuItem.separator(), at: 0)
-        timerMenuItem = NSMenuItem(title: "过期时间", action: nil, keyEquivalent: "")
+        timerMenuItem = NSMenuItem()
         statusMenu.insertItem(timerMenuItem, at: 0)
     }
     
@@ -73,26 +75,28 @@ class StatusMenuController: NSObject {
         let dateComponents = calendar.dateComponents([.second], from: now)
         let second = 30 - dateComponents.second! % 30
         
-        timerMenuItem.title = "过期时间: \(second)s"
+        timerMenuItem.title = "\(EXPIRE_TIME_STR)\(second)s"
         
         let authCodes = DataManager.shared.allAuthCode()
         
         if needRefreshCodeMenus {
             authCodeMenuItems.removeAll()
+            
             for menuItem in statusMenu.items {
                 if menuItem.tag >= authCodeMenuItemTagStartIndex {
                     statusMenu.removeItem(menuItem)
                 }
             }
+            
             var idx = 0
             for codeInfo in authCodes {
                 let authCodeMenuItem = NSMenuItem()
-                authCodeMenuItem.image = copyIcon
                 authCodeMenuItem.title = "\(codeInfo.key): \(codeInfo.value)"
                 authCodeMenuItem.target = self
-                authCodeMenuItem.tag = authCodeMenuItemTagStartIndex + idx
-                authCodeMenuItem.toolTip = "点击复制Code"
                 authCodeMenuItem.action = #selector(authCodeMenuItemClicked)
+                authCodeMenuItem.tag = authCodeMenuItemTagStartIndex + idx
+                authCodeMenuItem.toolTip = markDeleteVerifiedKey ? DELETE_VERIFY_KEY_STR : COPY_AUTH_CODE_STR
+                authCodeMenuItem.image = markDeleteVerifiedKey ? removeIcon : copyIcon
                 authCodeMenuItems.append(authCodeMenuItem)
                 statusMenu.insertItem(authCodeMenuItem, at: 0)
                 idx = idx + 1
@@ -107,16 +111,22 @@ class StatusMenuController: NSObject {
         }
     }
     
-    @IBAction func authCodeMenuItemClicked(_ sender: NSMenuItem) {
+    func authCodeMenuItemClicked(_ sender: NSMenuItem) {
         let authCodes = DataManager.shared.allAuthCode()
         let dataIdx = sender.tag - authCodeMenuItemTagStartIndex
         if dataIdx < authCodes.count {
             var idx = 0
             for codeInfo in authCodes {
                 if idx == dataIdx {
-                    let pasteboard = NSPasteboard.general()
-                    pasteboard.clearContents()
-                    pasteboard.setString(codeInfo.value, forType: NSStringPboardType)
+                    if markDeleteVerifiedKey {
+                        DataManager.shared.removeOTPAuthURL(tag: codeInfo.key)
+                        needRefreshCodeMenus = true
+                        updateMenu()
+                    } else {
+                        let pasteboard = NSPasteboard.general()
+                        pasteboard.clearContents()
+                        pasteboard.setString(codeInfo.value, forType: NSStringPboardType)
+                    }
                     break
                 }
                 idx = idx + 1
@@ -138,8 +148,12 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func deleteClicked(_ sender: NSMenuItem) {
-        statusMenu.cancelTracking()
-        statusItem.popUpMenu(statusMenu)
+        markDeleteVerifiedKey = !markDeleteVerifiedKey
+        deleteMenuItem.title = markDeleteVerifiedKey ? DONE_REMOVE_STR : REMOVE_STR
+        for authCodeMenuItem in authCodeMenuItems {
+            authCodeMenuItem.toolTip = markDeleteVerifiedKey ? DELETE_VERIFY_KEY_STR : COPY_AUTH_CODE_STR
+            authCodeMenuItem.image = markDeleteVerifiedKey ? removeIcon : copyIcon
+        }
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
