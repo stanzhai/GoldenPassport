@@ -12,6 +12,7 @@ class StatusMenuController: NSObject {
     var addVerifyKeyWindow: AddVerifyKeyWindow!
     
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var addMenuItem: NSMenuItem!
     @IBOutlet weak var deleteMenuItem: NSMenuItem!
     var statusItem: NSStatusItem!
     var timerMenuItem: NSMenuItem!
@@ -36,11 +37,11 @@ class StatusMenuController: NSObject {
     }
     
     private func loadIcons() {
-        let iconSize = NSMakeSize(14, 14)
         statusIcon = NSImage(named: "statusIcon")
-        statusIcon.size = iconSize
+        statusIcon.size = NSMakeSize(16, 16)
         statusIcon.isTemplate = true
         
+        let iconSize = NSMakeSize(14, 14)
         copyIcon = NSImage(named: "copyIcon")
         copyIcon.size = iconSize
         copyIcon.isTemplate = true
@@ -156,7 +157,9 @@ class StatusMenuController: NSObject {
     
     @IBAction func deleteClicked(_ sender: NSMenuItem) {
         markDeleteVerifiedKey = !markDeleteVerifiedKey
+        
         deleteMenuItem.title = markDeleteVerifiedKey ? DONE_REMOVE_STR : REMOVE_STR
+        
         for authCodeMenuItem in authCodeMenuItems {
             authCodeMenuItem.toolTip = markDeleteVerifiedKey ? DELETE_VERIFY_KEY_STR : COPY_AUTH_CODE_STR
             authCodeMenuItem.image = markDeleteVerifiedKey ? removeIcon : copyIcon

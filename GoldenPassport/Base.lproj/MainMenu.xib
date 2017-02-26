@@ -16,6 +16,7 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="A7z-EV-ZJb" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="GoldenPassport" customModuleProvider="target">
             <connections>
+                <outlet property="addMenuItem" destination="EIF-pz-Vhv" id="ggY-0B-u8X"/>
                 <outlet property="deleteMenuItem" destination="EUi-mw-GQs" id="2TY-Hu-a2x"/>
                 <outlet property="statusMenu" destination="275-6h-gP7" id="a0s-Jx-7x1"/>
             </connections>

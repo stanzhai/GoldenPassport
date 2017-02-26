@@ -243,16 +243,16 @@
 				F61B6C411E61B77A00C3E272 /* OTPAuth */,
 				F61B6BA71E61B6AF00C3E272 /* Foundation */,
 				F61B6B891E6135B600C3E272 /* AppDelegate.swift */,
-				F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */,
-				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
-				F61B6B901E6135B600C3E272 /* Info.plist */,
-				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
 				F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */,
+				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
 				F61B6BA41E617EDE00C3E272 /* AddVerifyKeyWindow.swift */,
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
 				F6D14B781E6273460078FD22 /* DataManager.swift */,
 				F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */,
 				F653584B1E632AB500DD2FAB /* Constant.swift */,
+				F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */,
+				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
+				F61B6B901E6135B600C3E272 /* Info.plist */,
 			);
 			path = GoldenPassport;
 			sourceTree = "<group>";
