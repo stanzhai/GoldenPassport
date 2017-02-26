@@ -30,6 +30,9 @@ class StatusMenuController: NSObject {
         loadIcons()
         initStatusItem()
         initStatusMenuItems()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(verifyCodeAdded), name: NSNotification.Name(rawValue: "VerifyKeyAdded"), object: nil)
     }
     
     private func loadIcons() {
@@ -134,6 +137,10 @@ class StatusMenuController: NSObject {
         }
     }
     
+    func verifyCodeAdded() {
+        needRefreshCodeMenus = true
+    }
+    
     @IBAction func addVerifyClicked(_ sender: NSMenuItem) {
         addVerifyKeyWindow.showWindow(nil)
         addVerifyKeyWindow.window?.makeKeyAndOrderFront(nil)
@@ -157,6 +164,8 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
         NSApplication.shared().terminate(self)
     }
 }

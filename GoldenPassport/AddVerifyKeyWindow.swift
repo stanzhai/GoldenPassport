@@ -57,6 +57,10 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
         let url = otpTextField.stringValue
         let tag = tagTextField.stringValue
         DataManager.shared.addOTPAuthURL(tag: tag, url: url)
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(name: NSNotification.Name(rawValue: "VerifyKeyAdded"), object: nil)
+        self.window?.close()
     }
     
     @IBAction func cancelBtnClicked(_ sender: NSButton) {
