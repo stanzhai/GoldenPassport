@@ -47,11 +47,16 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
             let qrFeature = results?.last as! CIQRCodeFeature
             let data = qrFeature.messageString
             otpTextField.stringValue = data!
+            
+            let otpInfo = OTPAuthURLParser(data!)
+            tagTextField.stringValue = otpInfo.user + "@" + otpInfo.host
         }
     }
 
     @IBAction func okBtnClicked(_ sender: NSButton) {
-        
+        let url = otpTextField.stringValue
+        let tag = tagTextField.stringValue
+        DataManager.shared.addOTPAuthURL(tag: tag, url: url)
     }
     
     @IBAction func cancelBtnClicked(_ sender: NSButton) {
