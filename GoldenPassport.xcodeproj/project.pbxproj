@@ -241,7 +241,7 @@
 			children = (
 				F61B6B8B1E6135B600C3E272 /* Assets.xcassets */,
 				F61B6C411E61B77A00C3E272 /* OTPAuth */,
-				F61B6BA71E61B6AF00C3E272 /* Foundation */,
+				F61B6BA71E61B6AF00C3E272 /* GTM */,
 				F61B6B891E6135B600C3E272 /* AppDelegate.swift */,
 				F61B6B9F1E614C7A00C3E272 /* StatusMenuController.swift */,
 				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
@@ -257,7 +257,7 @@
 			path = GoldenPassport;
 			sourceTree = "<group>";
 		};
-		F61B6BA71E61B6AF00C3E272 /* Foundation */ = {
+		F61B6BA71E61B6AF00C3E272 /* GTM */ = {
 			isa = PBXGroup;
 			children = (
 				F61B6BA91E61B76D00C3E272 /* GTMAbstractDOListener.h */,
@@ -364,7 +364,7 @@
 				F61B6C0E1E61B76D00C3E272 /* GTMValidatingContainers.h */,
 				F61B6C0F1E61B76D00C3E272 /* GTMValidatingContainers.m */,
 			);
-			name = Foundation;
+			name = GTM;
 			sourceTree = "<group>";
 		};
 		F61B6C411E61B77A00C3E272 /* OTPAuth */ = {
