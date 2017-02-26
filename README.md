@@ -1,4 +1,4 @@
-# GoldenPassport
+# GoldenPassport - WIP
 
 A Google Authenticator for Mac
 
