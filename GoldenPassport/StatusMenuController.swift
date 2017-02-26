@@ -10,29 +10,32 @@ import Cocoa
 
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
+    var statusItem: NSStatusItem!
     var addVerifyKeyWindow: AddVerifyKeyWindow!
-    
-    /*NSVariableStatusItemLength*/
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     
     override func awakeFromNib() {
         addVerifyKeyWindow = AddVerifyKeyWindow()
-        
-        let icon = NSImage(named: "statusIcon")
-        icon?.isTemplate = true // best for dark mode
-        statusItem.image = icon
-        
+        initStatusItem()
+    }
+    
+    private func initStatusItem() {
+        statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+        if let icon = NSImage(named: "statusIcon") {
+            icon.size = NSMakeSize(16, 16)
+            icon.isTemplate = true   // best for dark mode
+            statusItem.image = icon
+        }
+        statusItem.target = self
+        statusItem.action = #selector(openMenu)
+    }
+    
+    func openMenu(_ sender: AnyObject?) {
         /*
         statusMenu.addItem(NSMenuItem.separator())
         statusMenu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(openMenu), keyEquivalent: "q"))
         */
-        
-        statusItem.action = #selector(openMenu)
-        statusItem.menu = statusMenu
-    }
-    
-    func openMenu(_ sender: AnyObject?) {
         NSLog("open menu")
+        statusItem.popUpMenu(statusMenu)
     }
     
     @IBAction func addVerifyClicked(_ sender: NSMenuItem) {
@@ -50,7 +53,10 @@ class StatusMenuController: NSObject {
     
     @IBAction func deleteClicked(_ sender: NSMenuItem) {
         let data = OTPAuthURL.base32Decode("")
-        let gen = TOTPGenerator(secret: data, algorithm: TOTPGenerator.defaultAlgorithm(), digits: TOTPGenerator.defaultDigits(), period: TOTPGenerator.defaultPeriod())
+        let gen = TOTPGenerator(secret: data,
+                                algorithm: TOTPGenerator.defaultAlgorithm(),
+                                digits: TOTPGenerator.defaultDigits(),
+                                period: TOTPGenerator.defaultPeriod())
         let code = gen?.generateOTP(for: Date())
         NSLog(code!)
     }

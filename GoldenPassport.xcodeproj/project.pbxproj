@@ -70,6 +70,8 @@
 		F61B6C561E61BE0100C3E272 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B6C551E61BE0100C3E272 /* libz.tbd */; };
 		F61B6C571E61BE1C00C3E272 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B6C4F1E61B86900C3E272 /* libsqlite3.tbd */; };
 		F630E1C51E62BA0F004FA7C1 /* OTPAuthURLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */; };
+		F630E1C81E62DC58004FA7C1 /* VerifyManagerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630E1C61E62DC58004FA7C1 /* VerifyManagerWindow.swift */; };
+		F630E1C91E62DC58004FA7C1 /* VerifyManagerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F630E1C71E62DC58004FA7C1 /* VerifyManagerWindow.xib */; };
 		F6D14B791E6273460078FD22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D14B781E6273460078FD22 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +203,8 @@
 		F61B6C4F1E61B86900C3E272 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F61B6C551E61BE0100C3E272 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPAuthURLParser.swift; sourceTree = "<group>"; };
+		F630E1C61E62DC58004FA7C1 /* VerifyManagerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyManagerWindow.swift; sourceTree = "<group>"; };
+		F630E1C71E62DC58004FA7C1 /* VerifyManagerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyManagerWindow.xib; sourceTree = "<group>"; };
 		F6D14B781E6273460078FD22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +254,8 @@
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
 				F6D14B781E6273460078FD22 /* DataManager.swift */,
 				F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */,
+				F630E1C61E62DC58004FA7C1 /* VerifyManagerWindow.swift */,
+				F630E1C71E62DC58004FA7C1 /* VerifyManagerWindow.xib */,
 			);
 			path = GoldenPassport;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 			files = (
 				F61B6B9B1E613DE300C3E272 /* I18n.strings in Resources */,
 				F61B6B8C1E6135B600C3E272 /* Assets.xcassets in Resources */,
+				F630E1C91E62DC58004FA7C1 /* VerifyManagerWindow.xib in Resources */,
 				F61B6BA21E61787A00C3E272 /* AddVerifyKeyWindow.xib in Resources */,
 				F61B6B8F1E6135B600C3E272 /* MainMenu.xib in Resources */,
 			);
@@ -480,6 +487,7 @@
 				F630E1C51E62BA0F004FA7C1 /* OTPAuthURLParser.swift in Sources */,
 				F61B6C251E61B76D00C3E272 /* GTMNSFileHandle+UniqueName.m in Sources */,
 				F61B6C361E61B76E00C3E272 /* GTMServiceManagement.c in Sources */,
+				F630E1C81E62DC58004FA7C1 /* VerifyManagerWindow.swift in Sources */,
 				F61B6C291E61B76D00C3E272 /* GTMNSObject+KeyValueObserving.m in Sources */,
 				F61B6C2E1E61B76E00C3E272 /* GTMNSString+Replace.m in Sources */,
 				F61B6C151E61B76D00C3E272 /* GTMFourCharCode.m in Sources */,
