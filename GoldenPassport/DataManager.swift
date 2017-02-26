@@ -32,7 +32,7 @@ final class DataManager {
         var result: [String : String] = [:]
         for d in data {
             let url = d.value
-            let otpData = OTPAuthURLParser(url)
+            let otpData = OTPAuthURLParser(url)!
             
             let data = OTPAuthURL.base32Decode(otpData.secret)
             let gen = TOTPGenerator(secret: data,

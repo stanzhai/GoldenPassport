@@ -48,7 +48,7 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
             let data = qrFeature.messageString
             otpTextField.stringValue = data!
             
-            let otpInfo = OTPAuthURLParser(data!)
+            let otpInfo = OTPAuthURLParser(data!)!
             tagTextField.stringValue = otpInfo.user + "@" + otpInfo.host
         }
     }
@@ -56,11 +56,30 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
     @IBAction func okBtnClicked(_ sender: NSButton) {
         let url = otpTextField.stringValue
         let tag = tagTextField.stringValue
-        DataManager.shared.addOTPAuthURL(tag: tag, url: url)
         
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.post(name: NSNotification.Name(rawValue: "VerifyKeyAdded"), object: nil)
-        self.window?.close()
+        let alert: NSAlert = NSAlert()
+        alert.addButton(withTitle: "确定")
+        alert.alertStyle = NSAlertStyle.informational
+        
+        var isValid = false
+        if let otpInfo = OTPAuthURLParser(url) {
+            isValid = OTPAuthURL.base32Decode(otpInfo.secret) != nil
+        }
+        
+        if isValid {
+            DataManager.shared.addOTPAuthURL(tag: tag, url: url)
+            
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.post(name: NSNotification.Name(rawValue: "VerifyKeyAdded"), object: nil)
+            self.window?.close()
+            
+            alert.messageText = "添加成功，请到状态栏菜单查看。"
+        } else {
+            alert.messageText = "无法解析密钥，请检查OTPAuth URL。"
+            alert.alertStyle = NSAlertStyle.warning
+        }
+        
+        alert.runModal()
     }
     
     @IBAction func cancelBtnClicked(_ sender: NSButton) {
