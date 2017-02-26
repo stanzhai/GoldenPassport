@@ -1,6 +1,6 @@
 # GoldenPassport
 
-A native swift implementation of Google Authenticator for Mac
+A native implementation of Google Authenticator for Mac based on Swift3.
 
 # Screenshot
 
