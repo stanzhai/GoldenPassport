@@ -72,6 +72,7 @@
 		F630E1C51E62BA0F004FA7C1 /* OTPAuthURLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */; };
 		F653584C1E632AB500DD2FAB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653584B1E632AB500DD2FAB /* Constant.swift */; };
 		F6D14B791E6273460078FD22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D14B781E6273460078FD22 /* DataManager.swift */; };
+		F6E039261E6473F2009499DD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E039251E6473F2009499DD /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,6 +205,7 @@
 		F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPAuthURLParser.swift; sourceTree = "<group>"; };
 		F653584B1E632AB500DD2FAB /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F6D14B781E6273460078FD22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F6E039251E6473F2009499DD /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E039261E6473F2009499DD /* Carbon.framework in Frameworks */,
 				F61B6C571E61BE1C00C3E272 /* libsqlite3.tbd in Frameworks */,
 				F61B6C561E61BE0100C3E272 /* libz.tbd in Frameworks */,
 			);
@@ -385,6 +388,7 @@
 		F61B6C4E1E61B86800C3E272 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6E039251E6473F2009499DD /* Carbon.framework */,
 				F61B6C551E61BE0100C3E272 /* libz.tbd */,
 				F61B6C4F1E61B86900C3E272 /* libsqlite3.tbd */,
 			);
