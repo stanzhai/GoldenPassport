@@ -38,7 +38,7 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="lgI-PP-tuj"/>
-                <menuItem title="关于" keyEquivalent="a" id="lkD-dK-pdV">
+                <menuItem title="帮助" keyEquivalent="h" id="lkD-dK-pdV">
                     <connections>
                         <action selector="aboutClickedWithSender:" target="A7z-EV-ZJb" id="SoV-Ca-TnY"/>
                     </connections>

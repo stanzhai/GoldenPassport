@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func handleKeydownEvent(_ event: NSEvent) {
         let flag = event.modifierFlags.rawValue
+        print(flag)
         // flag of: Shift + Cmd
         if flag != 1179924 && flag != 1179914 {
             return
@@ -49,7 +50,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var i = 0
         for codeInfo in authCodes {
             if i == idx {
-                SimulateKeyBoardEvent.sendString(codeInfo.value)
+                let pasteboard = NSPasteboard.general()
+                let oldData = pasteboard.string(forType: NSStringPboardType)
+                pasteboard.clearContents()
+                pasteboard.setString(codeInfo.value, forType: NSStringPboardType)
+                
+                SimulateKeyBoardEvent.paste()
+                
+                if (oldData != nil) {
+                    sleep(1)
+                    pasteboard.clearContents()
+                    pasteboard.setString(oldData!, forType: NSStringPboardType)
+                }
+
                 break
             }
             i = i + 1

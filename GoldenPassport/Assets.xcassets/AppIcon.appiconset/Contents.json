@@ -11,20 +11,20 @@
       "scale" : "2x"
     },
     {
-      "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "AppIcon32x32.png",
+      "size" : "32x32",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "32x32",
+      "idiom" : "mac",
+      "filename" : "account-key-2.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "AppIcon128x128.png",
+      "filename" : "account-key.png",
       "scale" : "1x"
     },
     {

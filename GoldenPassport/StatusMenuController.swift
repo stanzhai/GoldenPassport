@@ -38,7 +38,7 @@ class StatusMenuController: NSObject {
     
     private func loadIcons() {
         statusIcon = NSImage(named: "statusIcon")
-        statusIcon.size = NSMakeSize(16, 16)
+        statusIcon.size = NSMakeSize(20, 20)
         statusIcon.isTemplate = true
         
         let iconSize = NSMakeSize(14, 14)
