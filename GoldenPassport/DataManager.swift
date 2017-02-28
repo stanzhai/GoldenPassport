@@ -46,6 +46,10 @@ final class DataManager {
         return result
     }
     
+    func dataCount() -> Int {
+        return data.count
+    }
+    
     private func saveData() {
         let fileUrl = URL(fileURLWithPath: dataFilePath)
         try? NSKeyedArchiver.archivedData(withRootObject: data).write(to: fileUrl)

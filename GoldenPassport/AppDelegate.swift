@@ -35,22 +35,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let char = event.characters {
             if let num = Int(char) {
-                copyAuthCode(idx: num)
+                setAuthCode(idx: num)
             }
         }
     }
     
-    private func copyAuthCode(idx: Int) {
-        let authCodes = DataManager.shared.allAuthCode()
-        if (idx >= authCodes.count) {
+    private func setAuthCode(idx: Int) {
+        if (idx >= DataManager.shared.dataCount()) {
             return
         }
+        
+        let authCodes = DataManager.shared.allAuthCode()
         var i = 0
         for codeInfo in authCodes {
             if i == idx {
-                let pasteboard = NSPasteboard.general()
-                pasteboard.clearContents()
-                pasteboard.setString(codeInfo.value, forType: NSStringPboardType)
+                SimulateKeyBoardEvent.sendString(codeInfo.value)
                 break
             }
             i = i + 1

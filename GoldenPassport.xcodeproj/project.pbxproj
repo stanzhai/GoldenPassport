@@ -73,6 +73,8 @@
 		F653584C1E632AB500DD2FAB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653584B1E632AB500DD2FAB /* Constant.swift */; };
 		F6D14B791E6273460078FD22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D14B781E6273460078FD22 /* DataManager.swift */; };
 		F6E039261E6473F2009499DD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E039251E6473F2009499DD /* Carbon.framework */; };
+		F6E3C59E1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3C59D1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift */; };
+		F6E3C5A01E650D0300DB4EA6 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3C59F1E650D0300DB4EA6 /* KeyCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +208,8 @@
 		F653584B1E632AB500DD2FAB /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F6D14B781E6273460078FD22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F6E039251E6473F2009499DD /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		F6E3C59D1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateKeyBoardEvent.swift; sourceTree = "<group>"; };
+		F6E3C59F1E650D0300DB4EA6 /* KeyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyCode.swift; path = ../KeyCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,8 @@
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
 				F6D14B781E6273460078FD22 /* DataManager.swift */,
 				F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */,
+				F6E3C59F1E650D0300DB4EA6 /* KeyCode.swift */,
+				F6E3C59D1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift */,
 				F653584B1E632AB500DD2FAB /* Constant.swift */,
 				F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */,
 				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
@@ -483,6 +489,7 @@
 				F61B6C261E61B76D00C3E272 /* GTMNSFileManager+Carbon.m in Sources */,
 				F61B6C3D1E61B76E00C3E272 /* GTMTransientRootProxy.m in Sources */,
 				F61B6C371E61B76E00C3E272 /* GTMSignalHandler.m in Sources */,
+				F6E3C59E1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift in Sources */,
 				F61B6C1D1E61B76D00C3E272 /* GTMNSAppleEventDescriptor+Foundation.m in Sources */,
 				F630E1C51E62BA0F004FA7C1 /* OTPAuthURLParser.swift in Sources */,
 				F61B6C251E61B76D00C3E272 /* GTMNSFileHandle+UniqueName.m in Sources */,
@@ -490,6 +497,7 @@
 				F61B6C291E61B76D00C3E272 /* GTMNSObject+KeyValueObserving.m in Sources */,
 				F61B6C2E1E61B76E00C3E272 /* GTMNSString+Replace.m in Sources */,
 				F61B6C151E61B76D00C3E272 /* GTMFourCharCode.m in Sources */,
+				F6E3C5A01E650D0300DB4EA6 /* KeyCode.swift in Sources */,
 				F61B6C3C1E61B76E00C3E272 /* GTMTransientRootPortProxy.m in Sources */,
 				F61B6C201E61B76D00C3E272 /* GTMNSArray+Merge.m in Sources */,
 				F61B6C4A1E61B78E00C3E272 /* HOTPGenerator.m in Sources */,

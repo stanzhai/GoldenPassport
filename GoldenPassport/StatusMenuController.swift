@@ -101,8 +101,10 @@ class StatusMenuController: NSObject {
                 authCodeMenuItem.tag = authCodeMenuItemTagStartIndex + idx
                 authCodeMenuItem.toolTip = markDeleteVerifiedKey ? DELETE_VERIFY_KEY_STR : COPY_AUTH_CODE_STR
                 authCodeMenuItem.image = markDeleteVerifiedKey ? removeIcon : copyIcon
+                authCodeMenuItem.keyEquivalent = "\(idx)"
+                authCodeMenuItem.keyEquivalentModifierMask = [.command, .shift]
                 authCodeMenuItems.append(authCodeMenuItem)
-                statusMenu.insertItem(authCodeMenuItem, at: 0)
+                statusMenu.insertItem(authCodeMenuItem, at: idx)
                 idx = idx + 1
             }
             needRefreshCodeMenus = false
@@ -167,7 +169,7 @@ class StatusMenuController: NSObject {
         
         if markDeleteVerifiedKey {
             let alert: NSAlert = NSAlert()
-            alert.messageText = "已进入删除模式，请到状态栏菜单中删除认证信息。\n\n删除后，请执行`\(DONE_REMOVE_STR)`退出编辑模式"
+            alert.messageText = "已进入删除模式，请到状态栏菜单中删除认证信息。\n\n删除后，请执行`\(DONE_REMOVE_STR)`退出删除模式"
             alert.addButton(withTitle: "确定")
             alert.alertStyle = NSAlertStyle.informational
             alert.runModal()
