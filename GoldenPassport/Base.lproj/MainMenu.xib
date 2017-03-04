@@ -48,7 +48,7 @@
                         <action selector="urlClicked:" target="A7z-EV-ZJb" id="zU0-PD-SGC"/>
                     </connections>
                 </menuItem>
-                <menuItem title="修改端口" id="jhX-Gv-47b">
+                <menuItem title="修改端口..." id="jhX-Gv-47b">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="configHttpPortClicked:" target="A7z-EV-ZJb" id="cBf-m7-0CP"/>
