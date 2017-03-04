@@ -18,7 +18,7 @@ A native implementation of Google Authenticator for Mac based on Swift3.
 # How to use
 
 1. Download the latest version of GoldenPassport from the [releases](https://github.com/stanzhai/GoldenPassport/releases) page.
-2. Put `GoldenPassport.app` to your `Application` folder then start it. 
+2. Unzip `GoldenPassport.zip` and put `GoldenPassport.app` to your `Application` folder then start it. 
 3. Add an auth URL from the status menu
 
 Now, you can get the verification code by:
