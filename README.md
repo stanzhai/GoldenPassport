@@ -8,6 +8,8 @@ A native implementation of Google Authenticator for Mac based on Swift3.
 
 ![add](screenshot/add-window.png)
 
+![restful-api](screenshot/restful-api.png)
+
 # Features
 
 - Recognize OTPAuth URL from a QRCode image
