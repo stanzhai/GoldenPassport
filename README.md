@@ -27,9 +27,9 @@ A native implementation of Google Authenticator for Mac based on Swift3.
 Now, you can get the verification code by:
 
 - From the status menu, copy the verification by clicking an auth-menu 
-- Or, use a global hot key(`Shift+Cmd+[0-9]`) to direct fill out the verification code
+- Use a global hot key(`Shift+Cmd+[0-9]`) to direct fill out the verification code
 
-You can use the RESTful API if you want to get the verification code from a shell script by the following way:
+You can also use the RESTful API if you want to get the verification code from a shell script by the following way:
 
 ```
 # you can get the url from `http://localhost:17304/`
