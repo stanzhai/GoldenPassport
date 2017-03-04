@@ -10,27 +10,32 @@ import Foundation
 
 final class DataManager {
     static let shared = DataManager()
+    private let authDataFile = "gp.secrets"
+    private let configFile = "config.plist"
     
-    private var data: [String : String]
+    private var authData: [String : String]
+    private var config: [String : String]
     
     private init() {
-        data = [:]
-        data = loadData()
+        authData = [:]
+        config = [:]
+        authData = loadData(authDataFile)
+        config = loadData(configFile)
     }
     
     func addOTPAuthURL(tag: String, url: String) {
-        data[tag] = url
-        saveData()
+        authData[tag] = url
+        saveData(authDataFile, data: authData)
     }
     
     func removeOTPAuthURL(tag: String) {
-        data.removeValue(forKey: tag)
-        saveData()
+        authData.removeValue(forKey: tag)
+        saveData(authDataFile, data: authData)
     }
     
     func allAuthCode() -> [String : String] {
         var result: [String : String] = [:]
-        for d in data {
+        for d in authData {
             let url = d.value
             let otpData = OTPAuthURLParser(url)!
             
@@ -47,16 +52,35 @@ final class DataManager {
     }
     
     func dataCount() -> Int {
-        return data.count
+        return authData.count
     }
     
-    private func saveData() {
-        let fileUrl = URL(fileURLWithPath: dataFilePath)
+    func getHttpServerPort() -> String {
+        return getConfig("http_server_port") ?? "\(DEFAULT_HTTP_PORT)"
+    }
+    
+    func saveHttpServerPort(port: String) {
+        saveConfig(key: "http_server_port", value: port)
+    }
+    
+    func getConfig(_ key: String) -> String? {
+        return config[key]
+    }
+    
+    func saveConfig(key: String, value: String) {
+        config[key] = value
+        saveData(configFile, data: config)
+    }
+    
+    private func saveData(_ dataFile: String, data: [String : String]) {
+        let fileLocation = "\(dataFilePath)\(dataFile)"
+        let fileUrl = URL(fileURLWithPath: fileLocation)
         try? NSKeyedArchiver.archivedData(withRootObject: data).write(to: fileUrl)
     }
     
-    private func loadData() -> [String : String] {
-        let d = NSKeyedUnarchiver.unarchiveObject(withFile: dataFilePath)
+    private func loadData(_ dataFile: String) -> [String : String] {
+        let fileLocation = "\(dataFilePath)\(dataFile)"
+        let d = NSKeyedUnarchiver.unarchiveObject(withFile: fileLocation)
         if d != nil {
             return d as! [String : String]
         }
@@ -77,6 +101,6 @@ final class DataManager {
             }
         }
         
-        return "\(path)/gp.secrets"
+        return path
     }
 }

@@ -7,13 +7,16 @@
 //
 
 import Cocoa
+import Swifter
 
 class StatusMenuController: NSObject {
     var addVerifyKeyWindow: AddVerifyKeyWindow!
+    var httpPortConfigWindow: HTTPPortConfigWindow!
     
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var addMenuItem: NSMenuItem!
     @IBOutlet weak var deleteMenuItem: NSMenuItem!
+    @IBOutlet weak var httpUrlMenuItem: NSMenuItem!
     var statusItem: NSStatusItem!
     var timerMenuItem: NSMenuItem!
     var authCodeMenuItems: [NSMenuItem] = []
@@ -25,15 +28,27 @@ class StatusMenuController: NSObject {
     var markDeleteVerifiedKey: Bool = false
     var needRefreshCodeMenus: Bool = true
     let authCodeMenuItemTagStartIndex = 100
+    var http: HttpServer!
     
     override func awakeFromNib() {
         addVerifyKeyWindow = AddVerifyKeyWindow()
+        httpPortConfigWindow = HTTPPortConfigWindow()
+        
         loadIcons()
         initStatusItem()
         initStatusMenuItems()
         
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(verifyCodeAdded), name: NSNotification.Name(rawValue: "VerifyKeyAdded"), object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(verifyCodeAdded),
+                                       name: NSNotification.Name(rawValue: "VerifyKeyAdded"),
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(httpServerPortChanged),
+                                       name: NSNotification.Name(rawValue: "HTTPServerPortChanged"),
+                                       object: nil)
+        
+        restartHttpServer()
     }
     
     private func loadIcons() {
@@ -66,6 +81,7 @@ class StatusMenuController: NSObject {
     
     func openMenu(_ sender: AnyObject?) {
         updateMenu()
+        updateHttpURLMenuItem()
         let runLoop = RunLoop.current
         let timer = Timer(timeInterval: TimeInterval(1), target: self, selector: #selector(updateMenu), userInfo: nil, repeats: true)
         runLoop.add(timer, forMode: RunLoopMode.eventTrackingRunLoopMode)
@@ -116,7 +132,7 @@ class StatusMenuController: NSObject {
             }
         }
     }
-    
+
     func authCodeMenuItemClicked(_ sender: NSMenuItem) {
         let authCodes = DataManager.shared.allAuthCode()
         let dataIdx = sender.tag - authCodeMenuItemTagStartIndex
@@ -144,11 +160,45 @@ class StatusMenuController: NSObject {
         needRefreshCodeMenus = true
     }
     
+    func httpServerPortChanged() {
+        updateHttpURLMenuItem()
+        restartHttpServer()
+    }
+    
+    private func updateHttpURLMenuItem() {
+        let serverPort = DataManager.shared.getHttpServerPort()
+        let url = "http://localhost:\(serverPort)"
+        httpUrlMenuItem.title = url
+    }
+    
+    private func restartHttpServer() {
+        let serverPort = DataManager.shared.getHttpServerPort()
+        if http != nil {
+            http.stop()
+        }
+        
+        http = httpServer()
+        do {
+            try http.start(UInt16(serverPort)!)
+        } catch {
+            let alert = NSAlert()
+            alert.messageText = "HTTP服务启动失败:\n\(error)"
+            alert.runModal()
+        }
+    }
+    
     @IBAction func addVerifyClicked(_ sender: NSMenuItem) {
         addVerifyKeyWindow.showWindow(nil)
         addVerifyKeyWindow.window?.makeKeyAndOrderFront(nil)
         addVerifyKeyWindow.clearTextField()
         NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    @IBAction func urlClicked(_ sender: NSMenuItem) {
+        let serverPort = DataManager.shared.getHttpServerPort()
+        if let url = URL(string: "http://localhost:\(serverPort)") {
+            NSWorkspace.shared().open(url)
+        }
     }
     
     @IBAction func aboutClicked(sender: NSMenuItem) {
@@ -174,6 +224,12 @@ class StatusMenuController: NSObject {
             alert.alertStyle = NSAlertStyle.informational
             alert.runModal()
         }
+    }
+    
+    @IBAction func configHttpPortClicked(_ sender: NSMenuItem) {
+        httpPortConfigWindow.showWindow(nil)
+        httpPortConfigWindow.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {

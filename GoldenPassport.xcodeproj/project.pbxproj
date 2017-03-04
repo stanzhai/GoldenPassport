@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01F360F794108C7111E68EA /* Pods_GoldenPassport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3C1B1D39C230CC7385FD7 /* Pods_GoldenPassport.framework */; };
 		F61B6B8A1E6135B600C3E272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B6B891E6135B600C3E272 /* AppDelegate.swift */; };
 		F61B6B8C1E6135B600C3E272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61B6B8B1E6135B600C3E272 /* Assets.xcassets */; };
 		F61B6B8F1E6135B600C3E272 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F61B6B8D1E6135B600C3E272 /* MainMenu.xib */; };
@@ -72,12 +73,19 @@
 		F630E1C51E62BA0F004FA7C1 /* OTPAuthURLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */; };
 		F635F4491E654B7D008B9048 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635F4481E654B7D008B9048 /* KeyCode.swift */; };
 		F653584C1E632AB500DD2FAB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F653584B1E632AB500DD2FAB /* Constant.swift */; };
+		F699811E1E6AC75900DDA6CA /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F699811D1E6AC75900DDA6CA /* HttpServer.swift */; };
+		F69981201E6AD88500DDA6CA /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F699811F1E6AD88500DDA6CA /* KeyboardMonitor.swift */; };
+		F69981231E6AE55700DDA6CA /* HTTPPortConfigWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69981211E6AE55700DDA6CA /* HTTPPortConfigWindow.swift */; };
+		F69981241E6AE55700DDA6CA /* HTTPPortConfigWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69981221E6AE55700DDA6CA /* HTTPPortConfigWindow.xib */; };
 		F6D14B791E6273460078FD22 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D14B781E6273460078FD22 /* DataManager.swift */; };
 		F6E039261E6473F2009499DD /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E039251E6473F2009499DD /* Carbon.framework */; };
 		F6E3C59E1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3C59D1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57A3C1B1D39C230CC7385FD7 /* Pods_GoldenPassport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoldenPassport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		609363E68683419B32E33CDD /* Pods-GoldenPassport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenPassport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenPassport/Pods-GoldenPassport.debug.xcconfig"; sourceTree = "<group>"; };
+		828169139D875ED2E51025BD /* Pods-GoldenPassport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenPassport.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoldenPassport/Pods-GoldenPassport.release.xcconfig"; sourceTree = "<group>"; };
 		F61B6B861E6135B600C3E272 /* GoldenPassport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenPassport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61B6B891E6135B600C3E272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F61B6B8B1E6135B600C3E272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +215,10 @@
 		F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPAuthURLParser.swift; sourceTree = "<group>"; };
 		F635F4481E654B7D008B9048 /* KeyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		F653584B1E632AB500DD2FAB /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F699811D1E6AC75900DDA6CA /* HttpServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpServer.swift; sourceTree = "<group>"; };
+		F699811F1E6AD88500DDA6CA /* KeyboardMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardMonitor.swift; sourceTree = "<group>"; };
+		F69981211E6AE55700DDA6CA /* HTTPPortConfigWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPPortConfigWindow.swift; sourceTree = "<group>"; };
+		F69981221E6AE55700DDA6CA /* HTTPPortConfigWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTTPPortConfigWindow.xib; sourceTree = "<group>"; };
 		F6D14B781E6273460078FD22 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F6E039251E6473F2009499DD /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		F6E3C59D1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateKeyBoardEvent.swift; sourceTree = "<group>"; };
@@ -220,18 +232,29 @@
 				F6E039261E6473F2009499DD /* Carbon.framework in Frameworks */,
 				F61B6C571E61BE1C00C3E272 /* libsqlite3.tbd in Frameworks */,
 				F61B6C561E61BE0100C3E272 /* libz.tbd in Frameworks */,
+				B01F360F794108C7111E68EA /* Pods_GoldenPassport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		079B7EB5A347DA8FBD96B164 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				609363E68683419B32E33CDD /* Pods-GoldenPassport.debug.xcconfig */,
+				828169139D875ED2E51025BD /* Pods-GoldenPassport.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F61B6B7D1E6135B600C3E272 = {
 			isa = PBXGroup;
 			children = (
 				F61B6B881E6135B600C3E272 /* GoldenPassport */,
 				F61B6B871E6135B600C3E272 /* Products */,
 				F61B6C4E1E61B86800C3E272 /* Frameworks */,
+				079B7EB5A347DA8FBD96B164 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,10 +277,14 @@
 				F61B6B8D1E6135B600C3E272 /* MainMenu.xib */,
 				F61B6BA41E617EDE00C3E272 /* AddVerifyKeyWindow.swift */,
 				F61B6BA11E61787A00C3E272 /* AddVerifyKeyWindow.xib */,
+				F69981211E6AE55700DDA6CA /* HTTPPortConfigWindow.swift */,
+				F69981221E6AE55700DDA6CA /* HTTPPortConfigWindow.xib */,
 				F6D14B781E6273460078FD22 /* DataManager.swift */,
 				F630E1C41E62BA0F004FA7C1 /* OTPAuthURLParser.swift */,
 				F635F4481E654B7D008B9048 /* KeyCode.swift */,
+				F699811F1E6AD88500DDA6CA /* KeyboardMonitor.swift */,
 				F6E3C59D1E6501FD00DB4EA6 /* SimulateKeyBoardEvent.swift */,
+				F699811D1E6AC75900DDA6CA /* HttpServer.swift */,
 				F653584B1E632AB500DD2FAB /* Constant.swift */,
 				F61B6BA81E61B76D00C3E272 /* GoldenPassport-Bridging-Header.h */,
 				F61B6B9D1E613DE300C3E272 /* I18n.strings */,
@@ -397,6 +424,7 @@
 				F6E039251E6473F2009499DD /* Carbon.framework */,
 				F61B6C551E61BE0100C3E272 /* libz.tbd */,
 				F61B6C4F1E61B86900C3E272 /* libsqlite3.tbd */,
+				57A3C1B1D39C230CC7385FD7 /* Pods_GoldenPassport.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -408,9 +436,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F61B6B931E6135B600C3E272 /* Build configuration list for PBXNativeTarget "GoldenPassport" */;
 			buildPhases = (
+				D422619C5BD080DA3EE1ECDF /* [CP] Check Pods Manifest.lock */,
 				F61B6B821E6135B600C3E272 /* Sources */,
 				F61B6B831E6135B600C3E272 /* Frameworks */,
 				F61B6B841E6135B600C3E272 /* Resources */,
+				7C0002F6FB3399D142AC582F /* [CP] Embed Pods Frameworks */,
+				FF76CABC566C867807E2E0CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,10 +497,59 @@
 				F61B6B8C1E6135B600C3E272 /* Assets.xcassets in Resources */,
 				F61B6BA21E61787A00C3E272 /* AddVerifyKeyWindow.xib in Resources */,
 				F61B6B8F1E6135B600C3E272 /* MainMenu.xib in Resources */,
+				F69981241E6AE55700DDA6CA /* HTTPPortConfigWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C0002F6FB3399D142AC582F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoldenPassport/Pods-GoldenPassport-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D422619C5BD080DA3EE1ECDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF76CABC566C867807E2E0CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoldenPassport/Pods-GoldenPassport-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F61B6B821E6135B600C3E272 /* Sources */ = {
@@ -500,6 +580,7 @@
 				F635F4491E654B7D008B9048 /* KeyCode.swift in Sources */,
 				F61B6C3C1E61B76E00C3E272 /* GTMTransientRootPortProxy.m in Sources */,
 				F61B6C201E61B76D00C3E272 /* GTMNSArray+Merge.m in Sources */,
+				F699811E1E6AC75900DDA6CA /* HttpServer.swift in Sources */,
 				F61B6C4A1E61B78E00C3E272 /* HOTPGenerator.m in Sources */,
 				F61B6C121E61B76D00C3E272 /* GTMDebugThreadValidation.m in Sources */,
 				F61B6C341E61B76E00C3E272 /* GTMRegex.m in Sources */,
@@ -515,12 +596,14 @@
 				F61B6B8A1E6135B600C3E272 /* AppDelegate.swift in Sources */,
 				F61B6C2B1E61B76E00C3E272 /* GTMNSScanner+Unsigned.m in Sources */,
 				F61B6C301E61B76E00C3E272 /* GTMNSString+XML.m in Sources */,
+				F69981231E6AE55700DDA6CA /* HTTPPortConfigWindow.swift in Sources */,
 				F61B6C271E61B76D00C3E272 /* GTMNSFileManager+Path.m in Sources */,
 				F61B6C171E61B76D00C3E272 /* GTMLightweightProxy.m in Sources */,
 				F61B6C351E61B76E00C3E272 /* GTMScriptRunner.m in Sources */,
 				F61B6C191E61B76D00C3E272 /* GTMLogger+ASL.m in Sources */,
 				F61B6C3B1E61B76E00C3E272 /* GTMSystemVersion.m in Sources */,
 				F61B6C321E61B76E00C3E272 /* GTMObjC2Runtime.m in Sources */,
+				F69981201E6AD88500DDA6CA /* KeyboardMonitor.swift in Sources */,
 				F61B6C2A1E61B76D00C3E272 /* GTMNSScanner+JSON.m in Sources */,
 				F61B6C2D1E61B76E00C3E272 /* GTMNSString+HTML.m in Sources */,
 				F61B6C141E61B76D00C3E272 /* GTMFileSystemKQueue.m in Sources */,
@@ -659,6 +742,7 @@
 		};
 		F61B6B941E6135B600C3E272 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 609363E68683419B32E33CDD /* Pods-GoldenPassport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -678,6 +762,7 @@
 		};
 		F61B6B951E6135B600C3E272 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828169139D875ED2E51025BD /* Pods-GoldenPassport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

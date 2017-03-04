@@ -17,6 +17,7 @@
             <connections>
                 <outlet property="addMenuItem" destination="EIF-pz-Vhv" id="ggY-0B-u8X"/>
                 <outlet property="deleteMenuItem" destination="EUi-mw-GQs" id="2TY-Hu-a2x"/>
+                <outlet property="httpUrlMenuItem" destination="rfh-jG-SkV" id="06I-be-NjD"/>
                 <outlet property="statusMenu" destination="275-6h-gP7" id="a0s-Jx-7x1"/>
             </connections>
         </customObject>
@@ -38,6 +39,22 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="lgI-PP-tuj"/>
+                <menuItem title="HTTP接口" id="H9A-2l-spp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="URL" id="rfh-jG-SkV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="urlClicked:" target="A7z-EV-ZJb" id="zU0-PD-SGC"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="修改端口" id="jhX-Gv-47b">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="configHttpPortClicked:" target="A7z-EV-ZJb" id="cBf-m7-0CP"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="jPi-0a-iw1"/>
                 <menuItem title="帮助" keyEquivalent="h" id="lkD-dK-pdV">
                     <connections>
                         <action selector="aboutClickedWithSender:" target="A7z-EV-ZJb" id="SoV-Ca-TnY"/>

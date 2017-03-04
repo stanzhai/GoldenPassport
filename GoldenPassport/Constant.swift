@@ -15,3 +15,5 @@ let DELETE_VERIFY_KEY_STR = "点击删除认证记录"
 
 let DONE_REMOVE_STR = "完成删除"
 let REMOVE_STR = "删除"
+
+let DEFAULT_HTTP_PORT = 17304
