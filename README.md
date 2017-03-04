@@ -10,10 +10,11 @@ A native implementation of Google Authenticator for Mac based on Swift3.
 
 # Features
 
-- Recognize OTPAuth URL from QRCode
+- Recognize OTPAuth URL from a QRCode image
+- Authentication code management
 - Support RESTful API to obtain the verification code
-- Click an auth-menu to copy the verification code
 - Use a global hot key(`Shift+Cmd+[0-9]`) to direct fill out the verification code
+- Click an auth-menu to copy the verification code to the `PasteBoard`
 
 # How to use
 
