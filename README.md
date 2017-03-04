@@ -30,7 +30,7 @@ You can use the RESTful API if you want to get the verification code from a shel
 
 ```
 # you can get the url from `http://localhost:17304/`
-code=$(curl 'http://localhost:17304/code/stan@stanzhai.site')
+code=$(curl 'http://localhost:17304/code/test@stanzhai.site')
 # ues the verification code
 echo $code
 ```
