@@ -15,7 +15,7 @@ public func httpServer() -> HttpServer {
     server["/"] = scopes {
         html {
             body {
-                h3 { inner = "Verifycation code list:" }
+                h3 { inner = "Verification code list:" }
                 
                 ul(DataManager.shared.allAuthCode()) { code in
                     li {
