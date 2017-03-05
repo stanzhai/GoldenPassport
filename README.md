@@ -56,3 +56,4 @@ GoldenPassport uses `cocoapods` as the package manager tool, you should install 
 - [macOS Development Tutorials](https://www.raywenderlich.com/category/macos)
 - [google-authenticator](https://github.com/google/google-authenticator)
 - [WeatherBar](http://footle.org/WeatherBar/)
+- [swifter](https://github.com/httpswift/swifter)
