@@ -65,3 +65,6 @@ fastlane/screenshots
 fastlane/test_output
 
 .DS_Store
+Pods/
+Packages/
+GoldenPassport.xcworkspace/
