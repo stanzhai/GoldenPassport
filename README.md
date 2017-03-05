@@ -40,7 +40,7 @@ echo $code
 
 # Building
 
-GoldenPassport use `cocoapods` as the package manager tool, you should install it first.
+GoldenPassport uses `cocoapods` as the package manager tool, you should install it first.
 
 1. `pod install` to install dependencies
 2. Open `GoldenPassport.xcworkspace` with Xcode to build
