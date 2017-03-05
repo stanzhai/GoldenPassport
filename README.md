@@ -38,6 +38,13 @@ code=$(curl 'http://localhost:17304/code/test@stanzhai.site')
 echo $code
 ```
 
+# Building
+
+GoldenPassport use `cocoapods` as the package manager tool, you should install it first.
+
+1. `pod install` to install dependencies
+2. Open `GoldenPassport.xcworkspace` with Xcode to build
+
 # Todo
 
 - Support auto startup with system
