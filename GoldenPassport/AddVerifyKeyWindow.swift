@@ -55,7 +55,12 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
             otpTextField.stringValue = data!
             
             let otpInfo = OTPAuthURLParser(data!)!
-            tagTextField.stringValue = otpInfo.user + "@" + otpInfo.host
+            if (otpInfo.user != nil) {
+                tagTextField.stringValue = otpInfo.user! + "@" + otpInfo.host
+            } else {
+                tagTextField.stringValue = otpInfo.host
+            }
+            
         }
     }
 
