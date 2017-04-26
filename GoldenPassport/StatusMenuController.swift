@@ -47,8 +47,8 @@ class StatusMenuController: NSObject {
                                        selector: #selector(httpServerPortChanged),
                                        name: NSNotification.Name(rawValue: "HTTPServerPortChanged"),
                                        object: nil)
-        
-        restartHttpServer()
+
+        checkAutoStartHttpServer()
     }
     
     private func loadIcons() {
@@ -169,6 +169,12 @@ class StatusMenuController: NSObject {
         let serverPort = DataManager.shared.getHttpServerPort()
         let url = "http://localhost:\(serverPort)"
         httpUrlMenuItem.title = url
+    }
+
+    private func checkAutoStartHttpServer() {
+        if (DataManager.shared.getHttpServerAutoStart()) {
+            restartHttpServer()
+        }
     }
     
     private func restartHttpServer() {

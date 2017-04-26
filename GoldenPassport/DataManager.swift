@@ -54,6 +54,14 @@ final class DataManager {
     func dataCount() -> Int {
         return authData.count
     }
+
+    func getHttpServerAutoStart() -> Bool {
+        return getConfig("http_server_auto_start") ?? true
+    }
+
+    func saveHttpServerAutoStart(auto: Bool) {
+        saveConfig(key: "http_server_auto_start", value: auto)
+    }
     
     func getHttpServerPort() -> String {
         return getConfig("http_server_port") ?? "\(DEFAULT_HTTP_PORT)"
