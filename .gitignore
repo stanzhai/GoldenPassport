@@ -69,3 +69,4 @@ Pods/
 Packages/
 GoldenPassport.xcworkspace/
 *.lock
+.idea
