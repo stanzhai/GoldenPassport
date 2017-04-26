@@ -68,3 +68,4 @@ fastlane/test_output
 Pods/
 Packages/
 GoldenPassport.xcworkspace/
+*.lock

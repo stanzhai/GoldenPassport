@@ -10,23 +10,32 @@ import Foundation
 
 class OTPAuthURLParser {
     var protocal: String
-    var user: String
+    var user: String?
     var host: String
     var secret: String
     
     init?(_ otpAuthURL: String) {
         // otpauth://totp/user@host?secret=DA82347xxx&issuer=xxx
+        // otpauth://totp/host?secret=ABCDEFG
         if let url = URL(string: otpAuthURL) {
-            let path = url.path
-            
             protocal = url.host!
             
-            let index = path.index(path.startIndex, offsetBy: 1)
-            user = path.substring(from: index).components(separatedBy: "@")[0]
-            host = path.components(separatedBy: "@")[1]
+            let pathComponent = url.lastPathComponent
             
-            let firstParam = url.query!.components(separatedBy: "&")[0]
-            secret = firstParam.components(separatedBy: "=")[1]
+            let parts = pathComponent.components(separatedBy: "@")
+            
+            if (parts.count > 1) {
+                user = parts.first!
+                host = parts.last!
+            } else {
+                host = parts.first!
+            }
+            
+            secret = (
+                url.query!.components(separatedBy: "@").filter({ (component) -> Bool in
+                    return component.hasPrefix("secret=")
+                }).first?.components(separatedBy: "=")[1]
+                )!
         } else {
             return nil
         }
