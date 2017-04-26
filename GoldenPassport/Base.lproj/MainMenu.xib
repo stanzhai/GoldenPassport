@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -17,6 +17,8 @@
             <connections>
                 <outlet property="addMenuItem" destination="EIF-pz-Vhv" id="ggY-0B-u8X"/>
                 <outlet property="deleteMenuItem" destination="EUi-mw-GQs" id="2TY-Hu-a2x"/>
+                <outlet property="enableAutoStart" destination="HPl-pR-Wll" id="xTs-Uv-k57"/>
+                <outlet property="httpServerSwitch" destination="6Dm-32-chD" id="Lmr-Da-wvH"/>
                 <outlet property="httpUrlMenuItem" destination="rfh-jG-SkV" id="06I-be-NjD"/>
                 <outlet property="statusMenu" destination="275-6h-gP7" id="a0s-Jx-7x1"/>
             </connections>
@@ -41,6 +43,18 @@
                 <menuItem isSeparatorItem="YES" id="lgI-PP-tuj"/>
                 <menuItem title="HTTP接口" id="H9A-2l-spp">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="SWITCH" id="6Dm-32-chD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="switchClicked:" target="A7z-EV-ZJb" id="VqQ-mD-3ar"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="启动时同时开启HTTP服务" id="HPl-pR-Wll">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="enableAutoStartClicked:" target="A7z-EV-ZJb" id="xW9-MP-WN2"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="URL" id="rfh-jG-SkV">
                     <modifierMask key="keyEquivalentModifierMask"/>
