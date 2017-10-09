@@ -32,7 +32,7 @@ class OTPAuthURLParser {
             }
             
             secret = (
-                url.query!.components(separatedBy: "@").filter({ (component) -> Bool in
+                url.query!.components(separatedBy: "&").filter({ (component) -> Bool in
                     return component.hasPrefix("secret=")
                 }).first?.components(separatedBy: "=")[1]
                 )!
