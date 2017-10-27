@@ -214,7 +214,7 @@ class StatusMenuController: NSObject {
             http = httpServer()
         }
         do {
-            try http.start(UInt16(serverPort)!)
+            try http.start(UInt16(serverPort)!, forceIPv4: true)
         } catch {
             let alert = NSAlert()
             alert.messageText = "HTTP服务启动失败:\n\(error)"

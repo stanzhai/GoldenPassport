@@ -11,6 +11,7 @@ import Swifter
 
 public func httpServer() -> HttpServer {
     let server = HttpServer()
+    server.listenAddressIPv4 = "127.0.0.1"
     
     server["/"] = scopes {
         html {
