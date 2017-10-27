@@ -41,9 +41,9 @@ final class DataManager {
 
             let data = OTPAuthURL.base32Decode(otpData.secret)
             let gen = TOTPGenerator(secret: data,
-                    algorithm: TOTPGenerator.defaultAlgorithm(),
-                    digits: TOTPGenerator.defaultDigits(),
-                    period: TOTPGenerator.defaultPeriod())
+                                    algorithm: TOTPGenerator.defaultAlgorithm(),
+                                    digits: TOTPGenerator.defaultDigits(),
+                                    period: TOTPGenerator.defaultPeriod())
             let code = gen?.generateOTP(for: Date())
 
             result[d.key] = code
@@ -103,9 +103,9 @@ final class DataManager {
     private var dataFilePath: String {
         let fileManager = FileManager.default
         let path = NSSearchPathForDirectoriesInDomains(
-                Foundation.FileManager.SearchPathDirectory.applicationSupportDirectory,
-                Foundation.FileManager.SearchPathDomainMask.userDomainMask,
-                true).first! + "/GoldenPassport/"
+            Foundation.FileManager.SearchPathDirectory.applicationSupportDirectory,
+            Foundation.FileManager.SearchPathDomainMask.userDomainMask,
+            true).first! + "/GoldenPassport/"
         if !fileManager.fileExists(atPath: path) {
             do {
                 try fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
@@ -113,7 +113,8 @@ final class DataManager {
                 print(error)
             }
         }
-
+        
         return path
     }
+    
 }
