@@ -17,6 +17,7 @@ A native implementation of Google Authenticator for Mac based on Swift3.
 - Support RESTful API to obtain the verification code
 - Use a global hot key(`Shift+Cmd+[0-9]`) to direct fill out the verification code
 - Click an auth-menu to copy the verification code to the `PasteBoard`
+- Export/Import authentication codes
 
 # How to use
 
