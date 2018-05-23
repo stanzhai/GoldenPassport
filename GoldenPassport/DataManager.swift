@@ -84,6 +84,30 @@ final class DataManager {
         config[key] = value
         saveData(configFile, data: config)
     }
+    
+    func importData(dist: URL) -> Int {
+        let d = NSKeyedUnarchiver.unarchiveObject(withFile: dist.path)
+        if d == nil {
+            return 0
+        }
+        let data = d as! [String: String]
+        var count = 0;
+        for k in data {
+            if authData[k.key] == nil {
+                authData[k.key] = k.value
+                count = count + 1
+            }
+        }
+        saveData(authDataFile, data: authData)
+        return count
+    }
+    
+    func exportData(dist: URL) {
+        let fileLocation = "\(dataFilePath)\(authDataFile)"
+        let fileUrl = URL(fileURLWithPath: fileLocation)
+        let manager = FileManager.default
+        try? manager.copyItem(at: fileUrl, to: dist)
+    }
 
     private func saveData(_ dataFile: String, data: [String: String]) {
         let fileLocation = "\(dataFilePath)\(dataFile)"

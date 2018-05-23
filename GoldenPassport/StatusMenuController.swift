@@ -16,6 +16,8 @@ class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var addMenuItem: NSMenuItem!
     @IBOutlet weak var deleteMenuItem: NSMenuItem!
+    @IBOutlet weak var importMenuItem: NSMenuItem!
+    @IBOutlet weak var exportMenuItem: NSMenuItem!
     @IBOutlet weak var httpUrlMenuItem: NSMenuItem!
     @IBOutlet weak var httpServerSwitch: NSMenuItem!
     @IBOutlet weak var enableAutoStart: NSMenuItem!
@@ -233,37 +235,6 @@ class StatusMenuController: NSObject {
         addVerifyKeyWindow.clearTextField()
         NSApp.activate(ignoringOtherApps: true)
     }
-    
-    @IBAction func switchClicked(_ sender: Any) {
-        if (http == nil || http.state != HttpServerIO.HttpServerIOState.running) {
-            startHttpServer()
-        } else {
-            stopHttpServer()
-        }
-    }
-
-    @IBAction func urlClicked(_ sender: NSMenuItem) {
-        let serverPort = DataManager.shared.getHttpServerPort()
-        if let url = URL(string: "http://localhost:\(serverPort)") {
-            NSWorkspace.shared().open(url)
-        }
-    }
-
-    @IBAction func aboutClicked(sender: NSMenuItem) {
-        if let url = URL(string: "https://github.com/stanzhai/GoldenPassport") {
-            NSWorkspace.shared().open(url)
-        }
-    }
-    
-    @IBAction func enableAutoStartClicked(_ sender: Any) {
-        if enableAutoStart.state == 1 {
-            enableAutoStart.state = 0
-            DataManager.shared.saveHttpServerAutoStart(auto: false)
-        } else {
-            enableAutoStart.state = 1
-            DataManager.shared.saveHttpServerAutoStart(auto: true)
-        }
-    }
 
     @IBAction func deleteClicked(_ sender: NSMenuItem) {
         markDeleteVerifiedKey = !markDeleteVerifiedKey
@@ -284,10 +255,71 @@ class StatusMenuController: NSObject {
         }
     }
 
+    @IBAction func importClicked(_ sender: NSMenuItem) {
+        let openPanel = NSOpenPanel()
+        openPanel.allowedFileTypes = ["secrets"]
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = false
+        openPanel.canCreateDirectories = false
+        openPanel.canChooseFiles = true
+
+        let i = openPanel.runModal()
+        if i == NSModalResponseCancel {
+            return
+        }
+        let count = DataManager.shared.importData(dist: openPanel.url!)
+        needRefreshCodeMenus = true
+        let alert = NSAlert()
+        alert.messageText = "成功导入\(count)条记录！"
+        alert.runModal()
+    }
+    
+    @IBAction func exportClicked(_ sender: NSMenuItem) {
+        let savePanel = NSSavePanel()
+        savePanel.title = "导出认证信息"
+        savePanel.nameFieldStringValue = "GoldenPassport.secrets"
+        let i = savePanel.runModal()
+        if i == NSModalResponseCancel {
+            return
+        }
+        DataManager.shared.exportData(dist: savePanel.url!)
+    }
+    
     @IBAction func configHttpPortClicked(_ sender: NSMenuItem) {
         httpPortConfigWindow.showWindow(nil)
         httpPortConfigWindow.window?.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    @IBAction func switchClicked(_ sender: Any) {
+        if (http == nil || http.state != HttpServerIO.HttpServerIOState.running) {
+            startHttpServer()
+        } else {
+            stopHttpServer()
+        }
+    }
+    
+    @IBAction func urlClicked(_ sender: NSMenuItem) {
+        let serverPort = DataManager.shared.getHttpServerPort()
+        if let url = URL(string: "http://localhost:\(serverPort)") {
+            NSWorkspace.shared().open(url)
+        }
+    }
+    
+    @IBAction func enableAutoStartClicked(_ sender: Any) {
+        if enableAutoStart.state == 1 {
+            enableAutoStart.state = 0
+            DataManager.shared.saveHttpServerAutoStart(auto: false)
+        } else {
+            enableAutoStart.state = 1
+            DataManager.shared.saveHttpServerAutoStart(auto: true)
+        }
+    }
+    
+    @IBAction func aboutClicked(sender: NSMenuItem) {
+        if let url = URL(string: "https://github.com/stanzhai/GoldenPassport") {
+            NSWorkspace.shared().open(url)
+        }
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {

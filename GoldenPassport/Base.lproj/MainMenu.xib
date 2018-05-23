@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -18,8 +19,10 @@
                 <outlet property="addMenuItem" destination="EIF-pz-Vhv" id="ggY-0B-u8X"/>
                 <outlet property="deleteMenuItem" destination="EUi-mw-GQs" id="2TY-Hu-a2x"/>
                 <outlet property="enableAutoStart" destination="HPl-pR-Wll" id="xTs-Uv-k57"/>
+                <outlet property="exportMenuItem" destination="QDc-eW-cqJ" id="XLZ-7W-zAJ"/>
                 <outlet property="httpServerSwitch" destination="6Dm-32-chD" id="Lmr-Da-wvH"/>
                 <outlet property="httpUrlMenuItem" destination="rfh-jG-SkV" id="06I-be-NjD"/>
+                <outlet property="importMenuItem" destination="Kmy-wJ-5fb" id="fHG-eo-E2T"/>
                 <outlet property="statusMenu" destination="275-6h-gP7" id="a0s-Jx-7x1"/>
             </connections>
         </customObject>
@@ -38,6 +41,18 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="deleteClicked:" target="A7z-EV-ZJb" id="mAO-Z4-BO1"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="导入" keyEquivalent="i" id="Kmy-wJ-5fb">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="importClicked:" target="A7z-EV-ZJb" id="xAJ-zt-4Jh"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="导出" keyEquivalent="e" id="QDc-eW-cqJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="exportClicked:" target="A7z-EV-ZJb" id="chA-ha-h13"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="lgI-PP-tuj"/>
