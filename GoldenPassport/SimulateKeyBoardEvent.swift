@@ -25,7 +25,8 @@ class SimulateKeyBoardEvent {
     
     class func sendString(_ str: String) {
         // Loop through each character in the UTF16 representation of the string.
-        for char in str.characters {
+        for char in str {
+//        for char in str.characters {
             
             let source = CGEventSource(stateID: CGEventSourceStateID.hidSystemState)
             let keyCode = KeyCode.enumWith(char)
