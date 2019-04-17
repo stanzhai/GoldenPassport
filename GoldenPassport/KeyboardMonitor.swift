@@ -48,17 +48,17 @@ class KeyboardMonitor {
         var i = 0
         for codeInfo in authCodes {
             if i == idx {
-                let pasteboard = NSPasteboard.general()
-                let oldData = pasteboard.string(forType: NSStringPboardType)
+                let pasteboard = NSPasteboard.general
+                let oldData = pasteboard.string(forType: .string)
                 pasteboard.clearContents()
-                pasteboard.setString(codeInfo.value, forType: NSStringPboardType)
+                pasteboard.setString(codeInfo.value, forType: .string)
                 
                 SimulateKeyBoardEvent.paste()
                 
                 if (oldData != nil) {
                     sleep(1)
                     pasteboard.clearContents()
-                    pasteboard.setString(oldData!, forType: NSStringPboardType)
+                    pasteboard.setString(oldData!, forType: .string)
                 }
                 
                 break

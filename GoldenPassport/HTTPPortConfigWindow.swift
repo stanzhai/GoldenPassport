@@ -26,7 +26,7 @@ class HTTPPortConfigWindow: NSWindowController {
     @IBAction func okClicked(_ sender: NSButton) {
         let alert: NSAlert = NSAlert()
         alert.addButton(withTitle: "确定")
-        alert.alertStyle = NSAlertStyle.informational
+        alert.alertStyle = NSAlert.Style.informational
         
         let port = portTextField.integerValue
         if port > 0 && port < 65535 {

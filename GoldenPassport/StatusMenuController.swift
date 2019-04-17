@@ -72,7 +72,7 @@ class StatusMenuController: NSObject {
     }
 
     private func initStatusItem() {
-        statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         statusItem.image = statusIcon
         statusItem.target = self
         statusItem.action = #selector(openMenu)
@@ -82,21 +82,21 @@ class StatusMenuController: NSObject {
         statusMenu.insertItem(NSMenuItem.separator(), at: 0)
         timerMenuItem = NSMenuItem()
         statusMenu.insertItem(timerMenuItem, at: 0)
-        enableAutoStart.state = DataManager.shared.getHttpServerAutoStart() ? 1 : 0
+        enableAutoStart.state = NSControl.StateValue(rawValue: DataManager.shared.getHttpServerAutoStart() ? 1 : 0)
     }
 
-    func openMenu(_ sender: AnyObject?) {
+    @objc func openMenu(_ sender: AnyObject?) {
         updateMenu()
         updateHttpURLMenuItem()
         let runLoop = RunLoop.current
         let timer = Timer(timeInterval: TimeInterval(1), target: self, selector: #selector(updateMenu), userInfo: nil, repeats: true)
-        runLoop.add(timer, forMode: RunLoopMode.eventTrackingRunLoopMode)
+        runLoop.add(timer, forMode: RunLoop.Mode.eventTracking)
         statusItem.popUpMenu(statusMenu)
         timer.invalidate()
         updateHttpSwitchMenuItem()
     }
 
-    func updateMenu() {
+    @objc func updateMenu() {
         let now = Date()
         let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         let dateComponents = calendar.dateComponents([.second], from: now)
@@ -140,7 +140,7 @@ class StatusMenuController: NSObject {
         }
     }
 
-    func authCodeMenuItemClicked(_ sender: NSMenuItem) {
+    @objc func authCodeMenuItemClicked(_ sender: NSMenuItem) {
         let authCodes = DataManager.shared.allAuthCode()
         let dataIdx = sender.tag - authCodeMenuItemTagStartIndex
         if dataIdx < authCodes.count {
@@ -152,9 +152,9 @@ class StatusMenuController: NSObject {
                         needRefreshCodeMenus = true
                         updateMenu()
                     } else {
-                        let pasteboard = NSPasteboard.general()
+                        let pasteboard = NSPasteboard.general
                         pasteboard.clearContents()
-                        pasteboard.setString(codeInfo.value, forType: NSStringPboardType)
+                        pasteboard.setString(codeInfo.value, forType: .string)
                     }
                     break
                 }
@@ -163,11 +163,11 @@ class StatusMenuController: NSObject {
         }
     }
 
-    func verifyCodeAdded() {
+    @objc func verifyCodeAdded() {
         needRefreshCodeMenus = true
     }
 
-    func httpServerPortChanged() {
+    @objc func httpServerPortChanged() {
         updateHttpURLMenuItem()
         if (http != nil && http.state == HttpServerIO.HttpServerIOState.running) {
             restartHttpServer()
@@ -250,7 +250,7 @@ class StatusMenuController: NSObject {
             let alert: NSAlert = NSAlert()
             alert.messageText = "已进入删除模式，请到状态栏菜单中删除认证信息。\n\n删除后，请执行`\(DONE_REMOVE_STR)`退出删除模式"
             alert.addButton(withTitle: "确定")
-            alert.alertStyle = NSAlertStyle.informational
+            alert.alertStyle = NSAlert.Style.informational
             alert.runModal()
         }
     }
@@ -264,7 +264,7 @@ class StatusMenuController: NSObject {
         openPanel.canChooseFiles = true
 
         let i = openPanel.runModal()
-        if i == NSModalResponseCancel {
+        if i == NSApplication.ModalResponse.cancel {
             return
         }
         let count = DataManager.shared.importData(dist: openPanel.url!)
@@ -279,7 +279,7 @@ class StatusMenuController: NSObject {
         savePanel.title = "导出认证信息"
         savePanel.nameFieldStringValue = "GoldenPassport.secrets"
         let i = savePanel.runModal()
-        if i == NSModalResponseCancel {
+        if i == NSApplication.ModalResponse.cancel {
             return
         }
         DataManager.shared.exportData(dist: savePanel.url!)
@@ -302,29 +302,29 @@ class StatusMenuController: NSObject {
     @IBAction func urlClicked(_ sender: NSMenuItem) {
         let serverPort = DataManager.shared.getHttpServerPort()
         if let url = URL(string: "http://localhost:\(serverPort)") {
-            NSWorkspace.shared().open(url)
+            NSWorkspace.shared.open(url)
         }
     }
     
     @IBAction func enableAutoStartClicked(_ sender: Any) {
-        if enableAutoStart.state == 1 {
-            enableAutoStart.state = 0
+        if enableAutoStart.state.rawValue == 1 {
+            enableAutoStart.state = NSControl.StateValue(rawValue: 0)
             DataManager.shared.saveHttpServerAutoStart(auto: false)
         } else {
-            enableAutoStart.state = 1
+            enableAutoStart.state = NSControl.StateValue(rawValue: 1)
             DataManager.shared.saveHttpServerAutoStart(auto: true)
         }
     }
     
     @IBAction func aboutClicked(sender: NSMenuItem) {
         if let url = URL(string: "https://github.com/stanzhai/GoldenPassport") {
-            NSWorkspace.shared().open(url)
+            NSWorkspace.shared.open(url)
         }
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
-        NSApplication.shared().terminate(self)
+        NSApplication.shared.terminate(self)
     }
 }

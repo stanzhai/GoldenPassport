@@ -35,14 +35,14 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
     
     @IBAction func selectPicClicked(_ sender: NSButton) {
         let openPanel = NSOpenPanel()
-        openPanel.allowedFileTypes = NSImage.imageTypes()
+        openPanel.allowedFileTypes = NSImage.imageTypes
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = false
         openPanel.canCreateDirectories = false
         openPanel.canChooseFiles = true
         
         let i = openPanel.runModal()
-        if i == NSModalResponseCancel {
+        if i == NSApplication.ModalResponse.cancel {
             return
         }
         
@@ -70,7 +70,7 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
         
         let alert: NSAlert = NSAlert()
         alert.addButton(withTitle: "确定")
-        alert.alertStyle = NSAlertStyle.informational
+        alert.alertStyle = NSAlert.Style.informational
         
         var isValid = false
         if let otpInfo = OTPAuthURLParser(url) {
@@ -87,7 +87,7 @@ class AddVerifyKeyWindow: NSWindowController, NSWindowDelegate {
             alert.messageText = "添加成功，请到状态栏菜单查看。"
         } else {
             alert.messageText = "无法解析密钥，请检查OTPAuth URL。"
-            alert.alertStyle = NSAlertStyle.warning
+            alert.alertStyle = NSAlert.Style.warning
         }
         
         alert.runModal()
