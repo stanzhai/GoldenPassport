@@ -33,8 +33,8 @@ final class DataManager {
         saveData(authDataFile, data: authData)
     }
 
-    func allAuthCode() -> [String: String] {
-        var result: [String: String] = [:]
+    func allAuthCode() -> [(key: String, value: String)] {
+        var result: [(key: String, value: String)] = []
         for d in authData {
             let url = d.value
             let otpData = OTPAuthURLParser(url)!
@@ -46,7 +46,7 @@ final class DataManager {
                                     period: TOTPGenerator.defaultPeriod())
             let code = gen?.generateOTP(for: Date())
 
-            result[d.key] = code
+            result.append((key: d.key, value: code ?? "<get code failed>"))
         }
         return result
     }

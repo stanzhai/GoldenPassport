@@ -6,5 +6,5 @@ target "GoldenPassport" do
   use_frameworks!
 
   # Pods for GoldenPassport
-  pod "Swifter", "~> 1.4.6"
+  pod "Swifter", "~> 1.5.0"
 end
