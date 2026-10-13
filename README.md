@@ -1,5 +1,8 @@
 # GoldenPassport
 
+> [!WARNING]
+> This project is no longer maintained due to limited time and energy. A community fork with improved system compatibility and features is available and recommended instead: <https://github.com/thatscode/GoldenPassport/tree/modernize>
+
 A native implementation of Google Authenticator for Mac based on Swift3.
 
 # Screenshot
